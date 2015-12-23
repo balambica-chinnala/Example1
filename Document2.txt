@@ -1,0 +1,562 @@
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\author{}
+\title{}
+\begin{document}
+\centering
+\section{JAVA ORIENTATION}
+\underline{\textbf{Section- 1}}
+\begin{itemize}
+\item Any problem, any logic, for that matter, anything can or rather has to be put inside a CLASS.in JAVA.
+\item So fill up tour code in a class and save it as class name.java$(preferably)$
+\textbf{\underline{Example:}}   \\
+\hspace{2cm} class ABC\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} int a;\\
+\hspace{3.5cm} String s;\\
+\hspace{3.5cm} void a$( )$\\  
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("a method");$\\
+\hspace{4cm} \}\\ 
+\hspace{3cm}\}\\
+\hspace{1cm} Class name for the above program is:\textbf{ABC.java} $( preferable\hspace{0.2cm} but \hspace{0.2cm} not \hspace{0.2cm} compulsary $)\\    \hspace{0.5cm}\textbf{Note}:But if you make a class public, you must name that file with that class name.\\
+\textbf{\underline{Example:}}   \\ 
+\hspace{2cm} public class ABC\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} int a;\\
+\hspace{3.5cm} String s;\\ 
+\hspace{3.5cm} void a$( )$\\
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("a method");$\\
+\hspace{4cm} \}\\
+\hspace{3cm}\}\\
+\hspace{1cm} Class name is : \textbf{ABC.java} $( MANDATORY $)\\
+\hspace{3.5cm} \textbf{CDE.java} $( COMPILATION\hspace{0.2cm} ERROR $)\\
+\item A .java file can contain more than one class but only public class.
+\textbf{\underline{Example:}}   \\
+\hspace{2cm}  class ABC\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} int i;\\
+\hspace{3.5cm} String s;\\
+\hspace{3.5cm} void a$( )$\\
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HI");$\\
+\hspace{4cm} \}\\
+\hspace{3cm}\}   \\
+\hspace{2cm}  class B\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} char c;\\
+\hspace{3.5cm} void b$( )$\\
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HELLO");$\\
+\hspace{4cm} \}\\
+\hspace{3cm}\} \\
+\hspace{1cm} Class name for the above program can be : \textbf{A.java} \\
+\hspace{8cm} $( or $)\\
+\hspace{7.8cm}  \textbf{B.java} \\
+\hspace{8cm} $( or $)\\
+\hspace{7.8cm}  \textbf{some random name.java}\\ 
+\hspace{0.2cm} But, The following program will fail.\\             
+\textbf{\underline{Example:}} \\  
+\hspace{2cm} public class ABC\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} int i;\\
+\hspace{3.5cm} String s;\\
+\hspace{3.5cm} void a$( )$\\
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HI");$\\
+\hspace{4cm} \} \\
+\hspace{3cm}\}   
+\hspace{2cm}  public class B\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} char c;\\
+\hspace{3.5cm} void b$( )$\\ 
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HELLO");$\\
+\hspace{4cm} \}\\
+\hspace{3cm}\} \\
+\hspace{1cm} Class name for the above program: \textbf{A.java}\\ 
+\hspace{7cm} $( or $)\\
+\hspace{6.5cm}  \textbf{B.java} \\
+\hspace{1cm} THESE TWO CLASS NAMES ARE WRONG.\\
+\hspace{1cm} \textbf{Reason} : A .java should not contain more than one public class.So, the correct version is the following:\\
+\textbf{\underline{Example:}}\\   
+\hspace{2cm} public class A\\
+\hspace{3cm}\{\\ 
+\hspace{3.5cm} int i;\\
+\hspace{3.5cm} String s;\\
+\hspace{3.5cm} void a$( )$\\
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HI");$\\
+\hspace{4cm} \}\\
+\hspace{3cm}\} \\  
+\hspace{2cm}   class B\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} char c;\\
+\hspace{3.5cm} void b$( )$\\
+\hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HELLO");$\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+\hspace{1cm} Class name for the above program: \textbf{A.java} $( COMPULSORY )$\\
+ \vspace{1cm}
+\textbf{\underline{EXAMPLES OF OTHER CLASSES}}\\
+ \vspace{0.01cm}
+ \hspace{0.01cm}\textbf{\underline{eg:1}}\hspace{2cm}  class Test\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("Hello world");$\\
+\hspace{4cm} \}\\
+\hspace{3cm}\}\\
+ \hspace{1cm} Class name is \textbf{Test.java}\\
+\vspace{0.5cm}
+ \hspace{0.01cm}\textbf{\underline{eg:2}}\hspace{2cm}  class Student\\
+ \hspace{3cm}\{ \\
+\hspace{3.5cm} int rollno;\\
+\hspace{3.5cm} String name;\\
+\hspace{3.5cm} String degree;\\
+ \hspace{3.5cm} void read$( )$\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("Reading");$\\
+ \hspace{4cm} \}\\
+ \hspace{3.5cm} void write$( )$\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("writing");$\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\}\\
+ \vspace{0.5cm}
+\begin{center}
+\underline{\textbf{Section-2}}\\
+\end{center}
+ \hspace{0.2cm} Any .java has to pass through two phases:\\
+  \vspace{0.5cm}
+\hspace{2cm} 1.Compilation Phase\\
+\hspace{2cm} 2.RunTme Phase\\
+ \vspace{0.1cm}
+ \hspace{0.2cm}\underline{1.Compilation Phase}:\\
+\vspace{0.2cm}
+\hspace{1cm} Any java program is compiled using "javac filename.java"\\
+ \textbf{\underline{Example:1}}   \\
+ \hspace{2cm}  class ABC\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} int i;\\
+\hspace{3.5cm} void a$( )$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("HI");$\\
+ \hspace{4cm} \}\\
+\hspace{3cm}\}\\ 
+\hspace{2cm}ABC.java$(class name)$\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}javac ABC.java$(compiling)$\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}ABC.class
+ \hspace{0.2cm} After Compilation classname.class will be produced.\\
+ \vspace{0.2cm}
+ \textbf{\underline{Example:2}}   \\
+\hspace{2cm}  public class ABC\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} int i;\\
+ \hspace{3.5cm} void b$( )$\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("HI");$\\
+ \hspace{4cm} \}\\
+\hspace{3cm}\} \\
+ \hspace{2cm}  class B\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm}  B$( )$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("B");$\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+ \hspace{2cm}   class C\\
+\hspace{3cm}\{ \\
+ \hspace{3.5cm} void d$( )$\\
+   \hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("d");$\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+ \hspace{1cm} Class name for the above program: \textbf{ABC.java} and after compiling the above program using javac ABC.java three .classes will be produced i.e. \textbf{ABC.class, B.class, c.class}.\\
+ \vspace{0.2cm}
+\hspace{0.2cm}\underline{\textbf{What happens in Compilation error}} \\
+\vspace{0.2cm}
+\hspace{0.2cm} Compliler will check for the following:\\
+\vspace{0.2cm}
+\hspace{0.2cm}\underline{\textbf{1.Syntax Checking}}\\
+\vspace{0.1cm}
+//A.java\\
+\hspace{2cm}   class A\\
+\hspace{3cm}\{ \\
+ \hspace{3.5cm} int i\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}(compilation falis because no semicolon;)
+\hspace{3.5cm} int j;\\
+\hspace{3.5cm} void a$( )$;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(Complilation falis because semicolon should not be placed during defination of method)\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("d");$\\
+\hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+\hspace{0.2cm}\underline{2.Wrong Assignments}\\
+\vspace{0.2cm}
+ //A.java  \\        
+ \hspace{0.01cm}\textbf{\underline{eg:1}}\hspace{2cm}  class A\\
+\hspace{3cm}\{ \\
+\hspace{3.5cm} public static void main$(String[]args)$\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} float f = 19.1;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}(Compilation falis because assigning double(19.1) to float f will cause of precision)\\
+\hspace{4cm} \}\\
+\hspace{3cm}\}\\
+\hspace{0.01cm}\textbf{\underline{eg:2}}  More common case is with "reference" variables.\\
+ \vspace{0.1cm}
+ //Cat.java\\
+ \vspace{0.2cm}
+ \hspace{2cm}   class Cat\\
+ \hspace{3cm}\{ \\
+ \hspace{3.5cm} int size;\\
+ \hspace{3.5cm} int height;\\
+ \hspace{3.5cm} void talk$( )$\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("meow");$\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+// Dog.java\\
+ \hspace{2cm}  class Dog\\
+  \hspace{4cm} \{\\
+ \hspace{3.5cm} int size;\\
+ \hspace{3.5cm} int height;\\
+ \hspace{3.5cm} void talk$( )$\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("bow");$\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+//Test.java\\             
+ \hspace{3cm}\{ \\
+\hspace{3.5cm} public static void main$(String[]args)$\\
+\hspace{4cm} \{\\
+ \hspace{4.5cm} Cat c= new Cat();\\
+ \hspace{4.5cm} Dog d= new Dog();\\
+ \hspace{4.5cm}  d=c;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}(Compilation will fail because assign "Cat" variable to "Dog" will not be allowed)\\
+ \hspace{4cm} \}\\
+ \hspace{3cm}\}\\
+ \hspace{0.2cm}\underline{3.Missing Compulsory Statements}\\
+ \vspace{0.2cm}
+   \hspace{0.2cm} If you have to write some statements for sure, but if you miss them, compiler will catch them:\\
+\textbf{Example:1} \hspace{0.2cm} A.java\\
+\hspace{2cm}  class A\\
+ \hspace{3cm}\{\\
+\hspace{3.5cm} int kk()\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("i");$\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}(Compilation will falis because "return" statement is missing)
+ \hspace{4cm} \}\\
+  \hspace{3cm}\} \\
+ \textbf{Example:2} \hspace{0.2cm} A.java\\
+\hspace{2cm}  class A\\
+\hspace{3cm}\{\\
+\hspace{3.5cm} int decision(int a)\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm} if(a>10)\\
+ \hspace{5cm} \{\\
+  \hspace{5.5cm}return a;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(Compilation falis because return is placed in "Optional Block")
+\hspace{5cm} \}\\
+\hspace{4.5cm} else if(a>10)\\
+\hspace{5cm} \{\\
+ \hspace{5.5cm}return a+2;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(Compilation falis because return is placed in "Optional Block")
+ \hspace{5cm} \}\\
+\hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+ \textbf{Example:3} \hspace{0.2cm} A.java\\
+ \hspace{2cm}  class A\\
+ \hspace{3cm}\{\\
+  \hspace{3.5cm} int decision(int a)\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm} if(a>10)\\
+ \hspace{5cm} \{\\
+ \hspace{5.5cm}return a;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+length=2,
+width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(Compilation falis because return is placed in "Optional Block")\\
+\hspace{5cm} \}\\
+ \hspace{4.5cm} else if(a>10)\\
+ \hspace{5cm} \{\\
+ \hspace{5.5cm}return a+2;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}(Compilation falis because return is placed in "Optional Block")\\
+  \hspace{5cm} \}\\
+  \hspace{4cm} \}\\
+ \hspace{3cm}\} \\
+ \textbf{Example:4} \hspace{0.2cm} A.java\\
+ \hspace{2cm}  class A\\
+  \hspace{3cm}\{\\
+ \hspace{3.5cm} int decision()\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} for(int i = 0; i < 10; i++)\\
+   \hspace{5cm} \{           \\
+ \hspace{5.5cm}return 1;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+          length=2,
+          width=3]},line width=0.4pt] (0,0) to (1,0);
+ \end{tikzpicture}(Compilation falis because return is placed in "Optional Block") \\
+\hspace{5cm} \}\\
+\hspace{4cm} \}\\
+\hspace{3cm}\} \\
+\vspace{1cm}
+\hspace{0.2cm}\underline{4.Putting Unreachable Statements}\\
+\vspace{0.2cm}
+Anything written after "return statement" become unreachable, Hence throws an error.\\
+\vspace{0.2cm}
+\textbf{Example:1} \hspace{0.2cm} A.java\\
+ \hspace{2cm}  class A\\
+\hspace{3cm}\{\\
+  \hspace{3.5cm} int kk()\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm} System.out.println$("kk");$\\
+ \hspace{5.5cm}return 10\\
+\hspace{5.5cm}System.out.println$("kk");$\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+length=2,
+  width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(Compilation fails because return is placed in "Optional Block") \\
+\hspace{4cm} \}\\
+\hspace{3cm}\} \\
+\vspace{1cm}
+\hspace{0.2cm}\underline{5.Violation Of rules}
+\vspace{0.2cm}
+There are many kind of java rules. If any of the rules are violated, compiler will shout saying, we have violated.\\
+\vspace{0.2cm}
+\textbf{Example:1} \hspace{0.2cm} Accesing a private variable\\
+\hspace{0.2cm} A.java\\
+ \hspace{2cm}  class A\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm} public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} A a = new A();\\
+\hspace{4.5cm} a.i = 10\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+length=2,
+  width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(Accessing a private variable of Other Class)\\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.2cm}
+\textbf{Example:2} \hspace{0.2cm} Accesing a state variable(without creating an object) From Static Context.\\
+\hspace{0.2cm} Test.java\\
+ \hspace{2cm}  class Test\\
+\hspace{3cm}\{\\
+\hspace{3.5cm} int i; // state variable\\
+ \hspace{3.5cm} public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} i = 0;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+length=2,
+  width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(This is wrong because 'i' is a non-static while main is static)\\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.2cm}
+\textbf{Example:3} \hspace{0.2cm} \\
+\hspace{0.2cm} Test.java\\
+ \hspace{2cm}  class Test\\\hspace{3cm}\{\\
+\hspace{3.5cm} int i; \\
+\hspace{3.5cm} static int j; \\
+ \hspace{3.5cm} public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} j = 0;\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+length=2,
+  width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(This is correct because 'j' is a static while main is static)\\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.2cm}
+\textbf{Example:4} \hspace{0.2cm} \\
+\hspace{0.2cm} // A.java\\
+ \hspace{2cm}  class A\\
+\hspace{3cm}\{\\
+\hspace{3.5cm} int i; \\
+\hspace{3.5cm} static int j; \\
+\hspace{3cm}\}\\
+\hspace{0.2cm} // Test.java\\
+ \hspace{2cm}  class Test\\
+ \hspace{3cm}\{\\
+ \hspace{3.5cm} public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm} System.out.println$("A.i");$\begin{tikzpicture}
+\draw[-{>[scale=2.5,
+length=2,
+  width=3]},line width=0.4pt] (0,0) to (1,0);
+\end{tikzpicture}(This will fail because 'i' is a static variable, have to create an object to access it)\\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+
+\vspace{0.2cm}
+\hspace{0.2cm}\underline{\textbf{6.Checked Exceptions:}(later)}\\
+\vspace{0.2cm}
+\underline{Note}:Like this, there are many type of compilation errors, So before one starts looking for output, check whether program compiles or not.
+
+\vspace{0.1cm}
+ \hspace{0.2cm}\underline{\textbf{2.Runtime Environment}:}\\
+ \vspace{0.1cm}
+ 1) After "Successful Compilation" , A class with "MAIN" method will execute.\\
+  \vspace{0.1cm}
+ \underline{\textbf{Example1:}}  //Test.java \\
+ \vspace{0.1cm}
+ \hspace{2cm}  class Test\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm} public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm}System.out.println("Hello TS"); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.5cm}
+\begin{center}
+\textbf{javac Test.java}(Compiling)\\
+$\downarrow $\\
+\textbf{Test.class}(Successful Compilation)\\
+$\downarrow $\\
+\textbf{java Test}("java" is the command to run a java program)
+\end{center}
+
+ \vspace{0.1cm}
+\underline{\textbf{Example2:}}  //A.java \\
+ \vspace{0.1cm}
+ \hspace{2cm}  class A\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm} int i;\\
+ \hspace{3.5cm} void a()\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm}System.out.println("Hai"); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.5cm}
+\begin{center}
+\textbf{javac A.java}$\rightarrow $(Success)\\
+\textbf{java A}$\rightarrow $(This will fail because no main method)
+\end{center}
+2) As soon as you see successful compilation and a class with "main" method, start drawing STACK and HEAP structure to analyse. STACK and HEAP concept is discussed in chapter 4.\\
+\vspace{0.2cm}
+3) The "ARGUMENTS" of a main method are special and are called "Command Line Arguments" or "CLA".\\
+\underline{\textbf{Example1:}}  //Test.java \\
+ \vspace{0.1cm}
+ \hspace{2cm}  class Test\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm}  public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm}System.out.println(args[0]); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.5cm}
+\begin{center}
+\textbf{javac Test.java}(Compiling)\\
+\vspace{0.2cm}
+\textbf{java Test Example}\\
+\vspace{0.2cm}
+\textbf{\underline{Output:}}Example
+\end{center}
+
+\underline{\textbf{Example2:}} Another common example of CLA is reading integer and add them or some operations. But since you are inputting them as strings, you have to convert string to integer. We use Integer.parseInt() method to achieve that.\\
+//Test.java \\
+ \vspace{0.1cm}
+ \hspace{2cm}  class Test\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm}  public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm}int a = Integer.parseInt(args[0]); \\
+ \hspace{4.5cm}int b = Integer.parseInt(args[1]); \\
+\hspace{4.5cm}System.out.println(a+b); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.5cm}
+\begin{center}
+\textbf{javac Test.java}(Compiling)\\
+\vspace{0.2cm}
+\textbf{java Test 23 114} $\rightarrow$ \underline{Output}:137\\
+\vspace{0.2cm}
+\textbf{java Test 1 4} $\rightarrow$ \underline{Output}:5\\
+\end{center}
+\vspace{0.1cm}
+But if you say just\\
+\vspace{0.2cm}
+\begin{center}
+\textbf{java Test} $\rightarrow$ Exception\\
+\vspace{0.2cm}
+\textbf{java Test 1 4} $\rightarrow$ ArrayOut of Bounds Exception\\
+\end{center}
+\vspace{0.2cm}
+4) One more famous RunTime error is "stack overflow error".\\
+\vspace{0.1cm}
+\underline{\textbf{Example:}}  //A.java \\
+ \vspace{0.1cm}
+ \hspace{2cm}  class A\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm} void a()\\
+ \hspace{4cm} \{\\
+\hspace{4.5cm}System.out.println("Hai"); \\
+\hspace{4.5cm}a(); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\hspace{2cm} //Test.java\\
+\hspace{2cm}  class Test\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm}  public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm}A a = new A(); \\
+ \hspace{4.5cm}a.a(); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.3cm}
+5) One more famous RunTime exception is Null Pointer Exception.\\
+\vspace{0.2cm}
+\hspace{2cm} //Test.java\\
+\hspace{2cm}  class Test\\
+\hspace{3cm}\{\\
+ \hspace{3.5cm}  public static void main$(String[]args)$\\
+ \hspace{4cm} \{\\
+ \hspace{4.5cm}A a = new; \\
+ \hspace{4.5cm}a.a(); \\
+\hspace{4cm} \} \\
+\hspace{3cm}\}\\
+\vspace{0.1cm}
+In this code without creating object, accessing state methods/ variables with "null" reference.\\
+\vspace{0.1cm}
+\underline{Note:}In all the above casses Compilation Succeeds.           
+\end{itemize}
+\end{document}
