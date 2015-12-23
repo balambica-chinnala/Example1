@@ -1,0 +1,850 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{\underline{\textbf{Java Programming and Hadoop}}}
+\author{\textbf{Second Draft}}
+\date{}
+\begin{document}
+\maketitle
+\section*{Day-1}
+\begin{frame}
+
+\begin{itemize}
+  \item Overall Intentation, Plan explained
+  \item Installation
+  \item SOP
+\end{itemize}
+\end{frame}
+\section*{Day-2}
+\begin{frame}
+
+\begin{itemize}
+  \item Variable,DataTypes-size
+  \item While you code observe Data
+  \item Swap Two Numbers,Swap Three Numbers
+  \item Addition
+\end{itemize}
+\end{frame}
+
+\section*{Day-3}
+\begin{frame}
+
+\begin{itemize}
+  \item Swap without third variable
+  \item Calculator
+  \item Operators
+\end{itemize}
+\end{frame}
+\section*{Day-4}
+\begin{frame}
+
+\begin{itemize}
+  \item Operators
+  \item if-elseif-else
+  \item Marks-Pass-Fail
+\end{itemize}
+\end{frame}
+\section*{Day-5}
+\begin{frame}
+
+\begin{itemize}
+  \item Nested if else
+  \item Flow of the Program is Diverted
+\end{itemize}
+\end{frame}
+\section*{Day-6}
+\begin{frame}
+
+\begin{itemize}
+  \item For loop Mechanism
+  \item General examples
+   \item Playing with Init / Condition
+\end{itemize}
+\end{frame}
+\section*{Day-7}
+\begin{frame}
+
+\begin{itemize}
+  \item Count the numbers of even numbers
+  \item Loops experiments with conditions
+  \item Loops experiment with Increment/Decrement
+  \item Loops and conditions
+\end{itemize}
+\end{frame}
+\section*{Day-8}
+\begin{frame}
+
+\begin{itemize}
+  \item Nested for loop
+  \item While and for loop 
+\end{itemize}
+\end{frame}
+\section*{Day-9}
+\begin{frame}
+
+\begin{itemize}
+  \item Arrays and for loops
+  \item Playing with Arrays
+\end{itemize}
+\end{frame}
+
+\section*{Day-10}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-11}
+\begin{frame}
+
+\begin{itemize}
+  \item A Logarithmic  Design
+  \item Counting Problem
+   \item Summation
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-12}
+\begin{frame}
+
+\begin{itemize}
+  \item Fibonacci
+  \item Reversing a Digit
+
+\end{itemize}
+\end{frame}
+
+\section*{Day-13}
+\begin{frame}
+
+\begin{itemize}
+  \item Smallest Divisor and Greatest Divisor
+  \item Generating Prime Numbers
+  \item Passing the Power of a number
+\end{itemize}
+\end{frame}
+
+\section*{Day-14}
+\begin{frame}
+
+\begin{itemize}
+  \item Array Reversal
+  \item Array Counting
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-15}
+\begin{frame}
+
+\begin{itemize}
+  \item Maximum Number in a set
+  \item Ordering Array
+\end{itemize}
+\end{frame}
+
+\section*{Day-16}
+\begin{frame}
+
+\begin{itemize}
+  \item Normal Sorting Algorithm
+  \item Merge - Sort Introduction
+\end{itemize}
+\end{frame}
+
+\section*{Day-17}
+\begin{frame}
+
+\begin{itemize}
+  \item Merge Sort
+  \item Selection Sort
+\end{itemize}
+\end{frame}
+
+\section*{Day-18}
+\begin{frame}
+
+\begin{itemize}
+  \item Insertion Sort
+  \item Summary of Sorting Algorithms
+\end{itemize}
+\end{frame}
+
+\section*{Day-19}
+\begin{frame}
+
+\begin{itemize}
+  \item Binary Search
+    \item String Reversal
+      \item Letter count
+\end{itemize}
+\end{frame}
+
+\section*{Day-20}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-21}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-22}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-23}
+\begin{frame}
+
+\begin{itemize}
+  \item Printing Diamond, Rectangle
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-24}
+\begin{frame}
+
+\begin{itemize}
+  \item Concept of Clean Coding
+  \item Modular Programming
+   \item No Return Type- With Arguments
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-25}
+\begin{frame}
+
+\begin{itemize}
+  \item Return Type - With Arguments
+  \item Return Type - No Arguments
+  \item No Return Type - No Arguments
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-26}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD 
+
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-27}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-28}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-29}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+ 
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-30}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-31}
+\begin{frame}
+
+\begin{itemize}
+  \item Object Orientation
+  \item Constructors
+\end{itemize}
+\end{frame}
+
+\section*{Day-32}
+\begin{frame}
+
+\begin{itemize}
+  \item Using Library Class
+  \item Strings
+\end{itemize}
+\end{frame}
+
+\section*{Day-33}
+\begin{frame}
+
+\begin{itemize}
+  \item Strings
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-34}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-35}
+\begin{frame}
+
+\begin{itemize}
+  \item Files
+\end{itemize}
+\end{frame}
+
+\section*{Day-36}
+\begin{frame}
+
+\begin{itemize}
+  \item Files
+\end{itemize}
+\end{frame}
+
+\section*{Day-37}
+\begin{frame}
+
+\begin{itemize}
+  \item Collection
+\end{itemize}
+\end{frame}
+
+\section*{Day-38}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-39}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-40}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-41}
+\begin{frame}
+
+\begin{itemize}
+  \item student,Arrays,Linked List etc;
+\end{itemize}
+\end{frame}
+
+\section*{Day-(60-90)}
+\begin{frame}
+
+\begin{itemize}
+  \item Big Data
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{\underline{\textbf{Java Programming and Hadoop}}}
+\author{\textbf{Second Draft}}
+\date{}
+\begin{document}
+\maketitle
+\section*{Day-1}
+\begin{frame}
+
+\begin{itemize}
+  \item Overall Intentation, Plan explained
+  \item Installation
+  \item SOP
+\end{itemize}
+\end{frame}
+\section*{Day-2}
+\begin{frame}
+
+\begin{itemize}
+  \item Variable,DataTypes-size
+  \item While you code observe Data
+  \item Swap Two Numbers,Swap Three Numbers
+  \item Addition
+\end{itemize}
+\end{frame}
+
+\section*{Day-3}
+\begin{frame}
+
+\begin{itemize}
+  \item Swap without third variable
+  \item Calculator
+  \item Operators
+\end{itemize}
+\end{frame}
+\section*{Day-4}
+\begin{frame}
+
+\begin{itemize}
+  \item Operators
+  \item if-elseif-else
+  \item Marks-Pass-Fail
+\end{itemize}
+\end{frame}
+\section*{Day-5}
+\begin{frame}
+
+\begin{itemize}
+  \item Nested if else
+  \item Flow of the Program is Diverted
+\end{itemize}
+\end{frame}
+\section*{Day-6}
+\begin{frame}
+
+\begin{itemize}
+  \item For loop Mechanism
+  \item General examples
+   \item Playing with Init / Condition
+\end{itemize}
+\end{frame}
+\section*{Day-7}
+\begin{frame}
+
+\begin{itemize}
+  \item Count the numbers of even numbers
+  \item Loops experiments with conditions
+  \item Loops experiment with Increment/Decrement
+  \item Loops and conditions
+\end{itemize}
+\end{frame}
+\section*{Day-8}
+\begin{frame}
+
+\begin{itemize}
+  \item Nested for loop
+  \item While and for loop 
+\end{itemize}
+\end{frame}
+\section*{Day-9}
+\begin{frame}
+
+\begin{itemize}
+  \item Arrays and for loops
+  \item Playing with Arrays
+\end{itemize}
+\end{frame}
+
+\section*{Day-10}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-11}
+\begin{frame}
+
+\begin{itemize}
+  \item A Logarithmic  Design
+  \item Counting Problem
+   \item Summation
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-12}
+\begin{frame}
+
+\begin{itemize}
+  \item Fibonacci
+  \item Reversing a Digit
+
+\end{itemize}
+\end{frame}
+
+\section*{Day-13}
+\begin{frame}
+
+\begin{itemize}
+  \item Smallest Divisor and Greatest Divisor
+  \item Generating Prime Numbers
+  \item Passing the Power of a number
+\end{itemize}
+\end{frame}
+
+\section*{Day-14}
+\begin{frame}
+
+\begin{itemize}
+  \item Array Reversal
+  \item Array Counting
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-15}
+\begin{frame}
+
+\begin{itemize}
+  \item Maximum Number in a set
+  \item Ordering Array
+\end{itemize}
+\end{frame}
+
+\section*{Day-16}
+\begin{frame}
+
+\begin{itemize}
+  \item Normal Sorting Algorithm
+  \item Merge - Sort Introduction
+\end{itemize}
+\end{frame}
+
+\section*{Day-17}
+\begin{frame}
+
+\begin{itemize}
+  \item Merge Sort
+  \item Selection Sort
+\end{itemize}
+\end{frame}
+
+\section*{Day-18}
+\begin{frame}
+
+\begin{itemize}
+  \item Insertion Sort
+  \item Summary of Sorting Algorithms
+\end{itemize}
+\end{frame}
+
+\section*{Day-19}
+\begin{frame}
+
+\begin{itemize}
+  \item Binary Search
+    \item String Reversal
+      \item Letter count
+\end{itemize}
+\end{frame}
+
+\section*{Day-20}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-21}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-22}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  \item TBD
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-23}
+\begin{frame}
+
+\begin{itemize}
+  \item Printing Diamond, Rectangle
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-24}
+\begin{frame}
+
+\begin{itemize}
+  \item Concept of Clean Coding
+  \item Modular Programming
+   \item No Return Type- With Arguments
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-25}
+\begin{frame}
+
+\begin{itemize}
+  \item Return Type - With Arguments
+  \item Return Type - No Arguments
+  \item No Return Type - No Arguments
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-26}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD 
+
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-27}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+  
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-28}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-29}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+ 
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-30}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-31}
+\begin{frame}
+
+\begin{itemize}
+  \item Object Orientation
+  \item Constructors
+\end{itemize}
+\end{frame}
+
+\section*{Day-32}
+\begin{frame}
+
+\begin{itemize}
+  \item Using Library Class
+  \item Strings
+\end{itemize}
+\end{frame}
+
+\section*{Day-33}
+\begin{frame}
+
+\begin{itemize}
+  \item Strings
+\end{itemize}
+\end{frame}
+
+
+\section*{Day-34}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-35}
+\begin{frame}
+
+\begin{itemize}
+  \item Files
+\end{itemize}
+\end{frame}
+
+\section*{Day-36}
+\begin{frame}
+
+\begin{itemize}
+  \item Files
+\end{itemize}
+\end{frame}
+
+\section*{Day-37}
+\begin{frame}
+
+\begin{itemize}
+  \item Collection
+\end{itemize}
+\end{frame}
+
+\section*{Day-38}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-39}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-40}
+\begin{frame}
+
+\begin{itemize}
+  \item TBD
+\end{itemize}
+\end{frame}
+
+\section*{Day-41}
+\begin{frame}
+
+\begin{itemize}
+  \item student,Arrays,Linked List etc;
+\end{itemize}
+\end{frame}
+
+\section*{Day-(60-90)}
+\begin{frame}
+
+\begin{itemize}
+  \item Big Data
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
