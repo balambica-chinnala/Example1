@@ -1,0 +1,1026 @@
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{\textbf{MAJOR OOP CONCEPTS}}
+\begin{document}
+\maketitle
+
+\begin{frame}
+
+\begin{itemize}
+  \item Inheritance - Abstraction - IS-A / HAS-A
+  \item PolyMorphism - Dynamic Binding
+  \item Overriding
+  \item Overloading
+  \item Abstract Classes
+  \item Interfaces
+\end{itemize}
+\end{frame}
+
+
+\section{\underline{Inheritance}}\hspace{4mm}
+$\rightarrow The\hspace{2mm}concept\hspace{2mm}of\hspace{2mm} Inheritance\hspace{2mm}is\hspace{2mm}fundamental\hspace{2mm}  to\hspace{2mm}Object\hspace{2mm}Orientation.$
+
+\vspace{2mm}$\rightarrow The\hspace{2mm}concept\hspace{2mm}is\hspace{2mm}based\hspace{2mm}on\hspace{2mm}the\hspace{2mm}fact\hspace{2mm}that,\hspace{2mm}we\hspace{2mm}will\hspace{2mm}abstract\hspace{2mm}out\hspace{2mm}all\hspace{2mm}the\hspace{2mm}features\hspace{2mm}of\hspace{2mm} subclasses\newline
+\hspace{2mm}and\hspace{2mm}place\hspace{2mm}them\hspace{2mm}inside\hspace{2mm}the\hspace{2mm}superclass.$
+
+\vspace{2mm}  eg 1: A car has the following properties.
+\begin{frame}
+
+\begin{itemize}
+  \item mileage
+  \item engine - capacity
+  \item occupancy
+  \item purpose 
+\end{itemize}
+\end{frame}
+\hspace{4mm} So, a car can be modelled in java like \newline
+
+\vspace{2mm} \hspace{4mm} Class Car \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int occupancy; \newline
+\vspace{2mm} \hspace{14mm} int engine-capacity; \newline
+\vspace{2mm} \hspace{14mm} float mileage; \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Family trip or Cab Service"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void HatchbackOrSedan ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("HatchbackOrSedan "); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\vspace{0.01mm} Above program follows exclusive to Cars  \\
+
+Similarly a bike can be modelled as follows \newline 
+
+\vspace{2mm} \hspace{4mm} Class Bike \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int occupancy; \newline
+\vspace{2mm} \hspace{14mm} int engine-capacity; \newline
+\vspace{2mm} \hspace{14mm} float mileage; \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Go out with friends or GF"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void GearOrWithoutGear ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println (" Geared / Without Geared"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\vspace{0.01mm} Above program follows exclusive to bike  \newline
+
+$\rightarrow \hspace{2mm}
+So \hspace{2mm} in \hspace{2mm}  the\hspace{2mm}  above \hspace{2mm} illustration,\hspace{2mm} we\hspace{2mm}can\hspace{2mm} identify\hspace{2mm} that.$
+\begin{frame}
+
+\begin{itemize}
+ \item mileage
+ \item engine - capacity
+ \item occupancy
+ \item purpose() 
+\end{itemize}
+\end{frame}
+
+\vspace{0.01mm} Above properties common for both CAR and BIKE  \newline
+
+\vspace{2mm}HatchbackOrSedan ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} CAR $ \newline
+\vspace{2mm} \hspace{2mm} GearOrWithoutGear ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} BIKE $\newline
+
+\vspace{2mm}$\rightarrow When\hspace{2mm}you\hspace{2mm}find \hspace{2mm}such\hspace{2mm} scanacious, \hspace{2mm}we\hspace{2mm}will\hspace{2mm}abstract\hspace{2mm}out \hspace{2mm}all\hspace{2mm}the\hspace{2mm}common
+\hspace{2mm}features\hspace{2mm}and\\
+\vspace{2mm}\hspace{2mm}place\hspace{2mm}them\hspace{2mm}inside\hspace{2mm}a \hspace{2mm}superclass.$ \newline
+\vspace{2mm} \hspace{4mm}$\rightarrow \hspace{2mm} This\hspace{2mm}process\hspace{2mm}is \hspace{2mm}called\hspace{2mm}"abstraction".So\hspace{2mm}the  \hspace{2mm}above\hspace{2mm}illustration\hspace{2mm}can  \hspace{2mm}be\hspace{2mm}modelled\hspace{2mm}as\hspace{2mm}  follows.$ \newline
+
+
+\vspace{2mm} \hspace{4mm} Class Vehicle \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int occupancy; \newline
+\vspace{2mm} \hspace{14mm} int engine-capacity; \newline
+\vspace{2mm} \hspace{14mm} float mileage; \newline
+\vspace{2mm} Above lines are for Abstraction \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Some purpose"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Car extends Vehicle \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Family trip or Cab Service"); \newline
+
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void HatchbackOrSedan ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("HatchbackOrSedan "); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Bike extends Vehicle \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Go out with friends or GF"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void GearOrWithoutGear ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println (" Geared / Without Geared"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\section{\underline{Observations}}\hspace{4mm}
+\vspace{2mm}$\rightarrow Variables\hspace{2mm}and\hspace{2mm}  methods\hspace{2mm}which\hspace{2mm}are\hspace{2mm}common \hspace{2mm}to\hspace{2mm}all\hspace{2mm}subclasses\hspace{2mm} are\hspace{2mm}taken\hspace{2mm}out\hspace{2mm}and\hspace{2mm} placed\hspace{2mm}in\\
+\hspace{2mm}the
+\vspace{2mm}\hspace{2mm}superclass,"vehicle".$\newline
+\vspace{2mm}\hspace{4mm}$\rightarrow Method\hspace{2mm}purpose()\hspace{2mm}  is\hspace{2mm}performing\hspace{2mm}different\hspace{2mm}things \hspace{2mm}in\hspace{2mm}Car\hspace{2mm}and\hspace{2mm}Bike  \hspace{2mm}subclasses.So\hspace{2mm}you\\
+\hspace{2mm}abstracted\hspace{2mm}out\hspace{2mm}and
+\hspace{2mm}kept\hspace{2mm}in\hspace{2mm}the\hspace{2mm}  superclass.You\hspace{2mm}gave\hspace{2mm}some\hspace{2mm}"dummy" \hspace{2mm}body\hspace{2mm}to\hspace{2mm}it\hspace{2mm}as  \hspace{2mm}following:$\newline
+
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Some purpose"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} Above program is dummy body given in superclass vehicle \newline
+
+\vspace{2mm}$\rightarrow You\hspace{2mm}later\hspace{2mm} overrided\hspace{2mm}in\hspace{2mm} subclasses.$ \newline
+\vspace{2mm}\hspace{5mm}$\rightarrow The\hspace{2mm}class
+\hspace{2mm}specific\hspace{2mm}properties\hspace{2mm}such
+\hspace{2mm}as $ \newline
+\vspace{2mm}\hspace{4mm}HatchbackOrSedan ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} CAR $ \newline
+\vspace{2mm} \hspace{2mm} GearOrWithoutGear ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} BIKE $\newline
+\vspace{2mm} ARE NOT PLACED IN THE SUPERCLASS.\newline
+\vspace{2mm}$\rightarrow Now\hspace{2mm}we\hspace{2mm}will\hspace{2mm}extend\hspace{2mm} it\hspace{2mm}to\hspace{2mm}class\hspace{2mm}Animal\hspace{2mm} and\hspace{2mm}lets\hspace{2mm}see,how\hspace{2mm}inheritance
+\hspace{2mm} works\hspace{2mm} for\hspace{2mm} our\\ \vspace{2mm}\hspace{2mm}abstraction.$ \newline
+\vspace{2mm}Now let us observe the Dog,Cat,Horse and abstract the features to a animal.\newline
+
+\vspace{2mm} \hspace{4mm} Class Dog \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bones"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void provide Security()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Security to houses"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} Above program is exclusive to Dog Class \newline
+
+\vspace{2mm} \hspace{4mm} Class Cat \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Meow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("drinking Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void StealMilk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Steal the Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} Above program is exclusive to Cat Class \newline
+
+\vspace{2mm} \hspace{4mm} Class Horse \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Grass "); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Eating Grass"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void transport()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Pulling Carts"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\vspace{2mm}$\rightarrow Let\hspace{2mm}us\hspace{2mm}abstract
+\hspace{2mm}the\hspace{2mm}common\hspace{2mm}features\hspace{2mm} out\hspace{2mm}and\hspace{2mm}keep\hspace{2mm}it\hspace{2mm} inside\hspace{2mm}Animal.$ \newline
+
+\vspace{2mm} \hspace{4mm} Class Horse \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Eat Something"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Talking"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} All these things are common to Dog,Cat,Horse.So abstracted them to Animal \newline
+
+\vspace{2mm} \hspace{4mm} Class Cat extends Animal \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Meow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("drinking Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void StealMilk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Steal the Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Dog extends Animal \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bones"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void provide Security()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Security to houses"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Horse extends Animal \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Grass"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Eating Grass"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void transport()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Pulling Carts"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm}$\rightarrow After\hspace{2mm}understanding
+\hspace{2mm}what\hspace{2mm}is\hspace{2mm}inheritance,let
+\hspace{2mm}us\hspace{2mm}see\hspace{2mm}some\hspace{2mm}examples
+\hspace{2mm}how\hspace{2mm}to\hspace{2mm}use\hspace{2mm}them.$ \newline
+\vspace{2mm}  eg 1: 
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int i; \newline
+\vspace{2mm} \hspace{14mm} void b()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Hi"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class B extends A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int j; \newline
+\vspace{2mm} \hspace{14mm} int i; \vspace{2mm}$\rightarrow gives \hspace{2mm}error $ \newline
+\vspace{2mm} \hspace{14mm} void a()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Hiiiii"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Test \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} public static void main (String[] args) \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm}\hspace{22mm}A\hspace{6mm}a\hspace{2mm}=\hspace{2mm}new\hspace{6mm}A();\newline
+\vspace{2mm}\hspace{32mm}a.i\hspace{2mm}=\hspace{2mm}10;\newline
+\vspace{2mm}\hspace{22mm}B\hspace{6mm}b\hspace{2mm}=\hspace{2mm}new\hspace{6mm}B();\newline
+\vspace{2mm}\hspace{32mm}b.j\hspace{2mm}=\hspace{2mm}20;\newline
+\vspace{2mm}\hspace{32mm}b.i\hspace{2mm}=\hspace{2mm}20;
+\hspace{8mm}$\rightarrow inherited$\newline
+\vspace{2mm}\hspace{32mm}b.b()\hspace{2mm}=\hspace{2mm}200;
+\hspace{4mm}$\rightarrow inherited$\newline
+\vspace{2mm}\hspace{32mm}a.a();\hspace{18mm}$\rightarrow will fail$\\
+\vspace{2mm}\hspace{32mm}a.j()\hspace{2mm}=\hspace{2mm}200;
+\hspace{8mm}$\rightarrow will fail$\\
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm}$\rightarrow Private\hspace{2mm}variables\hspace{2mm} can't\hspace{2mm}be\hspace{2mm}inherited)$\\
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} private int i; \newline
+\vspace{2mm} \hspace{14mm} private int a(); \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm}return 10; \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Test \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} public static void main (String[] args) \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm}\hspace{22mm}B\hspace{6mm}b\hspace{2mm}=\hspace{2mm}new
+\hspace{4mm}B();\newline
+\vspace{2mm}\hspace{32mm}b.i\hspace{2mm}=\hspace{2mm}200;
+\hspace{8mm}$\rightarrow not\hspace{2mm} inherited$\newline
+\vspace{2mm}\hspace{32mm}b.a();
+\hspace{16mm}$\rightarrow not\hspace{2mm} inherited$\newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm}$\rightarrow final\hspace{2mm}classes\hspace{2mm}can't \hspace{2mm}be\hspace{2mm}subclassed.$\\
+\vspace{2mm} \hspace{4mm} final class A \big\{\big\}\newline
+\vspace{2mm} \hspace{4mm} class B extends A \big\{\big\} $\rightarrow error$\newline
+\vspace{2mm}$\rightarrow One\hspace{2mm}of\hspace{2mm}most\hspace{2mm}famous\hspace{2mm}final\hspace{2mm}library\hspace{2mm}classes\hspace{2mm}is\hspace{2mm} string\hspace{2mm}class.$\\
+\vspace{2mm}$\rightarrow Then\hspace{2mm}what\hspace{2mm}about\hspace{2mm}classes\hspace{2mm} like\hspace{2mm} Exception,Tread??$\\
+\vspace{2mm}\hspace{4mm}Check out whether they are final or not?\\
+\vspace{2mm}\hspace{4mm}Think why String class is final and these two classes are not final?\\
+\section{\underline{IS-A, HAS-A RELATIONSHIPS}}\hspace{4mm}
+\vspace{2mm}$\rightarrow With\hspace{2mm}Inheritance,there "IS-A" RELATIONSHIP\hspace{2mm}that\hspace{2mm}comes
+\hspace{2mm}into\hspace{2mm}play.$\\
+\vspace{2mm}\hspace{5mm}$\rightarrow When\hspace{2mm}class\hspace{2mm} A\hspace{2mm}extends\hspace{2mm}class B,\hspace{2mm}  then\hspace{2mm}we\hspace{2mm}say$\\
+\vspace{2mm} \hspace{30mm} A "IS - A" B\newline
+\vspace{2mm}  eg 1:  
+\vspace{2mm} \hspace{4mm} Class B \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class A extends B \big\{ \big\}\newline
+\vspace{2mm} \hspace{30mm} \underline{A "IS - A" B}\newline
+\vspace{2mm}  eg 2: 
+\vspace{2mm} \hspace{4mm} Class Animal \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class Dog extends Animal \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class Cat extends Animal \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class GermanShephared extends Dog \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class Lebrador extends Dog \big\{ \big\}\newline
+\begin{center}
+\begin{tabular}{ |c|c|} 
+ \hline
+ The following are TRUE & The following are FALSE \\ 
+ \hline
+ Dog IS-A ANIMAL & ANIMAL IS-A Dog \\ 
+ Lebrador IS-A ANIMAL &  Lebrador IS-A Cat \\ 
+ Cat IS-A ANIMAL & GermanShephared IS-A Lebrador\\ 
+ Lebrador IS-A Dog & \\ 
+ Cat IS NOT A Dog & \\ 
+ \hline
+\end{tabular}
+\end{center}
+\vspace{2mm}  eg 3: Apply for Exception Hierarchy.\\
+\section*{\underline{USE OF "IS-A" RELATIONSHIP}}\hspace{4mm}
+\vspace{2mm} Instead of superclass, you can always use anything which satisfies "IS-A" relation.\\
+\vspace{2mm}  eg 4:
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} C a() \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} return new E();\hspace{2mm}$\rightarrow E  \hspace{4mm}IS-A \hspace{4mm} C.$ \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} Class C \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class D extends C \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class E extends D \big\{ \big\}\newline
+
+
+\vspace{2mm}  eg 5:
+\vspace{2mm} \hspace{4mm} Class A\big\{ \big\} \newline
+\vspace{2mm} \hspace{18mm} Class B extends A\big\{ \big\} \newline
+\vspace{2mm} \hspace{18mm} Class C \newline 
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} A\hspace{4mm} a()\\
+\vspace{2mm} \hspace{22mm} \big\{ \newline
+\vspace{2mm} \hspace{24mm} return new A();\\
+\vspace{2mm} \hspace{22mm} \big\} \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{18mm} Class D extends A\newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} B\hspace{4mm} a()\hspace{2mm} $\rightarrow perfect\hspace{2mm}overriding.Since\hspace{2mm}B\hspace{2mm}IS-A \hspace{2mm}A$\newline
+\vspace{2mm} \hspace{22mm} \big\{ \newline
+\vspace{2mm} \hspace{24mm} return new B();\\
+\vspace{2mm} \hspace{22mm} \big\} \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\section*{\underline{HAS - A RELATIONSHIP}}\hspace{4mm}
+\vspace{2mm}\hspace{4mm}$\rightarrow It has nothing to do with "Inheritance".$\\
+\vspace{2mm}\hspace{8mm}$\rightarrow Observe the following$\\
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int b; \newline
+\vspace{2mm} \hspace{14mm} string s; \newline
+\vspace{2mm} \hspace{14mm} B b; \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class B\newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int k; \newline
+\vspace{2mm} \hspace{14mm} float f; \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Observe that class A \textbf{HAS} \newline
+\begin{frame}
+
+\begin{itemize}
+  \item int b
+  \item string s
+  \item B  b
+\end{itemize}
+\end{frame}
+\vspace{2mm} \hspace{4mm} So Class A \underline{HAS-A} B.\\
+\vspace{2mm} \hspace{9mm}Class A \underline{HAS-A} String.\\
+\vspace{2mm}$\rightarrow In\hspace{2mm}such\hspace{2mm}cases, we\hspace{2mm}will\hspace{2mm}say\hspace{2mm}that\hspace{2mm} there\hspace{2mm}is\hspace{2mm}a "tight Coupling" between\hspace{2mm} A\hspace{2mm}and\hspace{2mm}B.$\\
+\vspace{2mm}$\rightarrow Tight\hspace{2mm}Coupling\hspace{2mm}means \hspace{2mm}having\hspace{2mm}strong\hspace{2mm}relationship. In\hspace{2mm}the\hspace{2mm}above\hspace{2mm}case, everytime\hspace{2mm}object\hspace{2mm}A\hspace{2mm}is\\
+\vspace{2mm}\hspace{2mm}created,it\hspace{2mm}also\hspace{2mm}contains\hspace{2mm}the\hspace{2mm}reference\hspace{2mm}variable\hspace{2mm}b, which\hspace{2mm}points\hspace{2mm}to "B" object.$
+\vspace{2mm}$\rightarrow Similar\hspace{2mm}word\hspace{2mm}is "Cohesion".$\\
+\vspace{2mm}$\rightarrow Observe\hspace{2mm}the\hspace{2mm}levels \hspace{2mm}of\hspace{2mm}Coupling.$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|} 
+ \hline
+  Class A & Class A & Class A \\ 
+\big\{ \big\} & \big\{ & \big\{ \\ 
+ Class B\big\{ \big\} & B b; & B b;\\ 
+ - & \big\} & \big\} \\ 
+ - & Class B\big\{ \big\} & Class B\\
+ - & - & \big\{ \\
+ - & - & A a; \\
+ - & - & \big\} \\
+ I & II & III \\
+ \hline
+\end{tabular}
+\end{center}
+\vspace{2mm}\underline{Order of Coupling from "Loose" to "Tight".}\\
+
+\vspace{2mm}\hspace{20mm} I \textless  II  \textless  III\\
+\vspace{2mm} Case III is very tight coupling.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\title{\textbf{MAJOR OOP CONCEPTS}}
+\begin{document}
+\maketitle
+
+\begin{frame}
+
+\begin{itemize}
+  \item Inheritance - Abstraction - IS-A / HAS-A
+  \item PolyMorphism - Dynamic Binding
+  \item Overriding
+  \item Overloading
+  \item Abstract Classes
+  \item Interfaces
+\end{itemize}
+\end{frame}
+
+
+\section{\underline{Inheritance}}\hspace{4mm}
+$\rightarrow The\hspace{2mm}concept\hspace{2mm}of\hspace{2mm} Inheritance\hspace{2mm}is\hspace{2mm}fundamental\hspace{2mm}  to\hspace{2mm}Object\hspace{2mm}Orientation.$
+
+\vspace{2mm}$\rightarrow The\hspace{2mm}concept\hspace{2mm}is\hspace{2mm}based\hspace{2mm}on\hspace{2mm}the\hspace{2mm}fact\hspace{2mm}that,\hspace{2mm}we\hspace{2mm}will\hspace{2mm}abstract\hspace{2mm}out\hspace{2mm}all\hspace{2mm}the\hspace{2mm}features\hspace{2mm}of\hspace{2mm} subclasses\newline
+\hspace{2mm}and\hspace{2mm}place\hspace{2mm}them\hspace{2mm}inside\hspace{2mm}the\hspace{2mm}superclass.$
+
+\vspace{2mm}  eg 1: A car has the following properties.
+\begin{frame}
+
+\begin{itemize}
+  \item mileage
+  \item engine - capacity
+  \item occupancy
+  \item purpose 
+\end{itemize}
+\end{frame}
+\hspace{4mm} So, a car can be modelled in java like \newline
+
+\vspace{2mm} \hspace{4mm} Class Car \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int occupancy; \newline
+\vspace{2mm} \hspace{14mm} int engine-capacity; \newline
+\vspace{2mm} \hspace{14mm} float mileage; \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Family trip or Cab Service"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void HatchbackOrSedan ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("HatchbackOrSedan "); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\vspace{0.01mm} Above program follows exclusive to Cars  \\
+
+Similarly a bike can be modelled as follows \newline 
+
+\vspace{2mm} \hspace{4mm} Class Bike \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int occupancy; \newline
+\vspace{2mm} \hspace{14mm} int engine-capacity; \newline
+\vspace{2mm} \hspace{14mm} float mileage; \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Go out with friends or GF"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void GearOrWithoutGear ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println (" Geared / Without Geared"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\vspace{0.01mm} Above program follows exclusive to bike  \newline
+
+$\rightarrow \hspace{2mm}
+So \hspace{2mm} in \hspace{2mm}  the\hspace{2mm}  above \hspace{2mm} illustration,\hspace{2mm} we\hspace{2mm}can\hspace{2mm} identify\hspace{2mm} that.$
+\begin{frame}
+
+\begin{itemize}
+ \item mileage
+ \item engine - capacity
+ \item occupancy
+ \item purpose() 
+\end{itemize}
+\end{frame}
+
+\vspace{0.01mm} Above properties common for both CAR and BIKE  \newline
+
+\vspace{2mm}HatchbackOrSedan ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} CAR $ \newline
+\vspace{2mm} \hspace{2mm} GearOrWithoutGear ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} BIKE $\newline
+
+\vspace{2mm}$\rightarrow When\hspace{2mm}you\hspace{2mm}find \hspace{2mm}such\hspace{2mm} scanacious, \hspace{2mm}we\hspace{2mm}will\hspace{2mm}abstract\hspace{2mm}out \hspace{2mm}all\hspace{2mm}the\hspace{2mm}common
+\hspace{2mm}features\hspace{2mm}and\\
+\vspace{2mm}\hspace{2mm}place\hspace{2mm}them\hspace{2mm}inside\hspace{2mm}a \hspace{2mm}superclass.$ \newline
+\vspace{2mm} \hspace{4mm}$\rightarrow \hspace{2mm} This\hspace{2mm}process\hspace{2mm}is \hspace{2mm}called\hspace{2mm}"abstraction".So\hspace{2mm}the  \hspace{2mm}above\hspace{2mm}illustration\hspace{2mm}can  \hspace{2mm}be\hspace{2mm}modelled\hspace{2mm}as\hspace{2mm}  follows.$ \newline
+
+
+\vspace{2mm} \hspace{4mm} Class Vehicle \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int occupancy; \newline
+\vspace{2mm} \hspace{14mm} int engine-capacity; \newline
+\vspace{2mm} \hspace{14mm} float mileage; \newline
+\vspace{2mm} Above lines are for Abstraction \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Some purpose"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Car extends Vehicle \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Family trip or Cab Service"); \newline
+
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void HatchbackOrSedan ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("HatchbackOrSedan "); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Bike extends Vehicle \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Go out with friends or GF"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void GearOrWithoutGear ()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println (" Geared / Without Geared"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\section{\underline{Observations}}\hspace{4mm}
+\vspace{2mm}$\rightarrow Variables\hspace{2mm}and\hspace{2mm}  methods\hspace{2mm}which\hspace{2mm}are\hspace{2mm}common \hspace{2mm}to\hspace{2mm}all\hspace{2mm}subclasses\hspace{2mm} are\hspace{2mm}taken\hspace{2mm}out\hspace{2mm}and\hspace{2mm} placed\hspace{2mm}in\\
+\hspace{2mm}the
+\vspace{2mm}\hspace{2mm}superclass,"vehicle".$\newline
+\vspace{2mm}\hspace{4mm}$\rightarrow Method\hspace{2mm}purpose()\hspace{2mm}  is\hspace{2mm}performing\hspace{2mm}different\hspace{2mm}things \hspace{2mm}in\hspace{2mm}Car\hspace{2mm}and\hspace{2mm}Bike  \hspace{2mm}subclasses.So\hspace{2mm}you\\
+\hspace{2mm}abstracted\hspace{2mm}out\hspace{2mm}and
+\hspace{2mm}kept\hspace{2mm}in\hspace{2mm}the\hspace{2mm}  superclass.You\hspace{2mm}gave\hspace{2mm}some\hspace{2mm}"dummy" \hspace{2mm}body\hspace{2mm}to\hspace{2mm}it\hspace{2mm}as  \hspace{2mm}following:$\newline
+
+\vspace{2mm} \hspace{14mm} void purpose()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Some purpose"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} Above program is dummy body given in superclass vehicle \newline
+
+\vspace{2mm}$\rightarrow You\hspace{2mm}later\hspace{2mm} overrided\hspace{2mm}in\hspace{2mm} subclasses.$ \newline
+\vspace{2mm}\hspace{5mm}$\rightarrow The\hspace{2mm}class
+\hspace{2mm}specific\hspace{2mm}properties\hspace{2mm}such
+\hspace{2mm}as $ \newline
+\vspace{2mm}\hspace{4mm}HatchbackOrSedan ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} CAR $ \newline
+\vspace{2mm} \hspace{2mm} GearOrWithoutGear ()\hspace{2mm} $\rightarrow EXCLUSIVE \hspace{2mm} TO \hspace{2mm} BIKE $\newline
+\vspace{2mm} ARE NOT PLACED IN THE SUPERCLASS.\newline
+\vspace{2mm}$\rightarrow Now\hspace{2mm}we\hspace{2mm}will\hspace{2mm}extend\hspace{2mm} it\hspace{2mm}to\hspace{2mm}class\hspace{2mm}Animal\hspace{2mm} and\hspace{2mm}lets\hspace{2mm}see,how\hspace{2mm}inheritance
+\hspace{2mm} works\hspace{2mm} for\hspace{2mm} our\\ \vspace{2mm}\hspace{2mm}abstraction.$ \newline
+\vspace{2mm}Now let us observe the Dog,Cat,Horse and abstract the features to a animal.\newline
+
+\vspace{2mm} \hspace{4mm} Class Dog \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bones"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void provide Security()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Security to houses"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} Above program is exclusive to Dog Class \newline
+
+\vspace{2mm} \hspace{4mm} Class Cat \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Meow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("drinking Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void StealMilk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Steal the Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} Above program is exclusive to Cat Class \newline
+
+\vspace{2mm} \hspace{4mm} Class Horse \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Grass "); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Eating Grass"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void transport()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Pulling Carts"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+
+\vspace{2mm}$\rightarrow Let\hspace{2mm}us\hspace{2mm}abstract
+\hspace{2mm}the\hspace{2mm}common\hspace{2mm}features\hspace{2mm} out\hspace{2mm}and\hspace{2mm}keep\hspace{2mm}it\hspace{2mm} inside\hspace{2mm}Animal.$ \newline
+
+\vspace{2mm} \hspace{4mm} Class Horse \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int weight; \newline
+\vspace{2mm} \hspace{14mm} int colour; \newline
+\vspace{2mm} \hspace{14mm} int age; \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Eat Something"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Talking"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} All these things are common to Dog,Cat,Horse.So abstracted them to Animal \newline
+
+\vspace{2mm} \hspace{4mm} Class Cat extends Animal \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Meow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("drinking Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void StealMilk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Steal the Milk"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Dog extends Animal \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bow"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("bones"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void provide Security()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Security to houses"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Horse extends Animal \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} void talk()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Grass"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void eat()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Eating Grass"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{14mm} void transport()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Pulling Carts"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm}$\rightarrow After\hspace{2mm}understanding
+\hspace{2mm}what\hspace{2mm}is\hspace{2mm}inheritance,let
+\hspace{2mm}us\hspace{2mm}see\hspace{2mm}some\hspace{2mm}examples
+\hspace{2mm}how\hspace{2mm}to\hspace{2mm}use\hspace{2mm}them.$ \newline
+\vspace{2mm}  eg 1: 
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int i; \newline
+\vspace{2mm} \hspace{14mm} void b()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Hi"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class B extends A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int j; \newline
+\vspace{2mm} \hspace{14mm} int i; \vspace{2mm}$\rightarrow gives \hspace{2mm}error $ \newline
+\vspace{2mm} \hspace{14mm} void a()  \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} System.Out.Println ("Hiiiii"); \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Test \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} public static void main (String[] args) \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm}\hspace{22mm}A\hspace{6mm}a\hspace{2mm}=\hspace{2mm}new\hspace{6mm}A();\newline
+\vspace{2mm}\hspace{32mm}a.i\hspace{2mm}=\hspace{2mm}10;\newline
+\vspace{2mm}\hspace{22mm}B\hspace{6mm}b\hspace{2mm}=\hspace{2mm}new\hspace{6mm}B();\newline
+\vspace{2mm}\hspace{32mm}b.j\hspace{2mm}=\hspace{2mm}20;\newline
+\vspace{2mm}\hspace{32mm}b.i\hspace{2mm}=\hspace{2mm}20;
+\hspace{8mm}$\rightarrow inherited$\newline
+\vspace{2mm}\hspace{32mm}b.b()\hspace{2mm}=\hspace{2mm}200;
+\hspace{4mm}$\rightarrow inherited$\newline
+\vspace{2mm}\hspace{32mm}a.a();\hspace{18mm}$\rightarrow will fail$\\
+\vspace{2mm}\hspace{32mm}a.j()\hspace{2mm}=\hspace{2mm}200;
+\hspace{8mm}$\rightarrow will fail$\\
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm}$\rightarrow Private\hspace{2mm}variables\hspace{2mm} can't\hspace{2mm}be\hspace{2mm}inherited)$\\
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} private int i; \newline
+\vspace{2mm} \hspace{14mm} private int a(); \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm}return 10; \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class Test \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} public static void main (String[] args) \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm}\hspace{22mm}B\hspace{6mm}b\hspace{2mm}=\hspace{2mm}new
+\hspace{4mm}B();\newline
+\vspace{2mm}\hspace{32mm}b.i\hspace{2mm}=\hspace{2mm}200;
+\hspace{8mm}$\rightarrow not\hspace{2mm} inherited$\newline
+\vspace{2mm}\hspace{32mm}b.a();
+\hspace{16mm}$\rightarrow not\hspace{2mm} inherited$\newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm}$\rightarrow final\hspace{2mm}classes\hspace{2mm}can't \hspace{2mm}be\hspace{2mm}subclassed.$\\
+\vspace{2mm} \hspace{4mm} final class A \big\{\big\}\newline
+\vspace{2mm} \hspace{4mm} class B extends A \big\{\big\} $\rightarrow error$\newline
+\vspace{2mm}$\rightarrow One\hspace{2mm}of\hspace{2mm}most\hspace{2mm}famous\hspace{2mm}final\hspace{2mm}library\hspace{2mm}classes\hspace{2mm}is\hspace{2mm} string\hspace{2mm}class.$\\
+\vspace{2mm}$\rightarrow Then\hspace{2mm}what\hspace{2mm}about\hspace{2mm}classes\hspace{2mm} like\hspace{2mm} Exception,Tread??$\\
+\vspace{2mm}\hspace{4mm}Check out whether they are final or not?\\
+\vspace{2mm}\hspace{4mm}Think why String class is final and these two classes are not final?\\
+\section{\underline{IS-A, HAS-A RELATIONSHIPS}}\hspace{4mm}
+\vspace{2mm}$\rightarrow With\hspace{2mm}Inheritance,there "IS-A" RELATIONSHIP\hspace{2mm}that\hspace{2mm}comes
+\hspace{2mm}into\hspace{2mm}play.$\\
+\vspace{2mm}\hspace{5mm}$\rightarrow When\hspace{2mm}class\hspace{2mm} A\hspace{2mm}extends\hspace{2mm}class B,\hspace{2mm}  then\hspace{2mm}we\hspace{2mm}say$\\
+\vspace{2mm} \hspace{30mm} A "IS - A" B\newline
+\vspace{2mm}  eg 1:  
+\vspace{2mm} \hspace{4mm} Class B \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class A extends B \big\{ \big\}\newline
+\vspace{2mm} \hspace{30mm} \underline{A "IS - A" B}\newline
+\vspace{2mm}  eg 2: 
+\vspace{2mm} \hspace{4mm} Class Animal \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class Dog extends Animal \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class Cat extends Animal \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class GermanShephared extends Dog \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class Lebrador extends Dog \big\{ \big\}\newline
+\begin{center}
+\begin{tabular}{ |c|c|} 
+ \hline
+ The following are TRUE & The following are FALSE \\ 
+ \hline
+ Dog IS-A ANIMAL & ANIMAL IS-A Dog \\ 
+ Lebrador IS-A ANIMAL &  Lebrador IS-A Cat \\ 
+ Cat IS-A ANIMAL & GermanShephared IS-A Lebrador\\ 
+ Lebrador IS-A Dog & \\ 
+ Cat IS NOT A Dog & \\ 
+ \hline
+\end{tabular}
+\end{center}
+\vspace{2mm}  eg 3: Apply for Exception Hierarchy.\\
+\section*{\underline{USE OF "IS-A" RELATIONSHIP}}\hspace{4mm}
+\vspace{2mm} Instead of superclass, you can always use anything which satisfies "IS-A" relation.\\
+\vspace{2mm}  eg 4:
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} C a() \newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} return new E();\hspace{2mm}$\rightarrow E  \hspace{4mm}IS-A \hspace{4mm} C.$ \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{10mm} Class C \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class D extends C \big\{ \big\}\newline
+\vspace{2mm} \hspace{12mm} Class E extends D \big\{ \big\}\newline
+
+
+\vspace{2mm}  eg 5:
+\vspace{2mm} \hspace{4mm} Class A\big\{ \big\} \newline
+\vspace{2mm} \hspace{18mm} Class B extends A\big\{ \big\} \newline
+\vspace{2mm} \hspace{18mm} Class C \newline 
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} A\hspace{4mm} a()\\
+\vspace{2mm} \hspace{22mm} \big\{ \newline
+\vspace{2mm} \hspace{24mm} return new A();\\
+\vspace{2mm} \hspace{22mm} \big\} \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\vspace{2mm} \hspace{18mm} Class D extends A\newline
+\vspace{2mm} \hspace{18mm} \big\{ \newline
+\vspace{2mm} \hspace{22mm} B\hspace{4mm} a()\hspace{2mm} $\rightarrow perfect\hspace{2mm}overriding.Since\hspace{2mm}B\hspace{2mm}IS-A \hspace{2mm}A$\newline
+\vspace{2mm} \hspace{22mm} \big\{ \newline
+\vspace{2mm} \hspace{24mm} return new B();\\
+\vspace{2mm} \hspace{22mm} \big\} \newline
+\vspace{2mm} \hspace{18mm} \big\} \newline
+\section*{\underline{HAS - A RELATIONSHIP}}\hspace{4mm}
+\vspace{2mm}\hspace{4mm}$\rightarrow It has nothing to do with "Inheritance".$\\
+\vspace{2mm}\hspace{8mm}$\rightarrow Observe the following$\\
+\vspace{2mm} \hspace{4mm} Class A \newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int b; \newline
+\vspace{2mm} \hspace{14mm} string s; \newline
+\vspace{2mm} \hspace{14mm} B b; \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Class B\newline
+\vspace{2mm} \hspace{10mm} \big\{ \newline
+\vspace{2mm} \hspace{14mm} int k; \newline
+\vspace{2mm} \hspace{14mm} float f; \newline
+\vspace{2mm} \hspace{10mm} \big\} \newline
+\vspace{2mm} \hspace{4mm} Observe that class A \textbf{HAS} \newline
+\begin{frame}
+
+\begin{itemize}
+  \item int b
+  \item string s
+  \item B  b
+\end{itemize}
+\end{frame}
+\vspace{2mm} \hspace{4mm} So Class A \underline{HAS-A} B.\\
+\vspace{2mm} \hspace{9mm}Class A \underline{HAS-A} String.\\
+\vspace{2mm}$\rightarrow In\hspace{2mm}such\hspace{2mm}cases, we\hspace{2mm}will\hspace{2mm}say\hspace{2mm}that\hspace{2mm} there\hspace{2mm}is\hspace{2mm}a "tight Coupling" between\hspace{2mm} A\hspace{2mm}and\hspace{2mm}B.$\\
+\vspace{2mm}$\rightarrow Tight\hspace{2mm}Coupling\hspace{2mm}means \hspace{2mm}having\hspace{2mm}strong\hspace{2mm}relationship. In\hspace{2mm}the\hspace{2mm}above\hspace{2mm}case, everytime\hspace{2mm}object\hspace{2mm}A\hspace{2mm}is\\
+\vspace{2mm}\hspace{2mm}created,it\hspace{2mm}also\hspace{2mm}contains\hspace{2mm}the\hspace{2mm}reference\hspace{2mm}variable\hspace{2mm}b, which\hspace{2mm}points\hspace{2mm}to "B" object.$
+\vspace{2mm}$\rightarrow Similar\hspace{2mm}word\hspace{2mm}is "Cohesion".$\\
+\vspace{2mm}$\rightarrow Observe\hspace{2mm}the\hspace{2mm}levels \hspace{2mm}of\hspace{2mm}Coupling.$
+
+\begin{center}
+\begin{tabular}{ |c|c|c|} 
+ \hline
+  Class A & Class A & Class A \\ 
+\big\{ \big\} & \big\{ & \big\{ \\ 
+ Class B\big\{ \big\} & B b; & B b;\\ 
+ - & \big\} & \big\} \\ 
+ - & Class B\big\{ \big\} & Class B\\
+ - & - & \big\{ \\
+ - & - & A a; \\
+ - & - & \big\} \\
+ I & II & III \\
+ \hline
+\end{tabular}
+\end{center}
+\vspace{2mm}\underline{Order of Coupling from "Loose" to "Tight".}\\
+
+\vspace{2mm}\hspace{20mm} I \textless  II  \textless  III\\
+\vspace{2mm} Case III is very tight coupling.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
